@@ -26,6 +26,6 @@ push-latest:
 
 release: build test tag-latest push push-latest
 
-git-tag-version: release
+git-tag-version:
 	git tag -a v$(VERSION) -m "v$(VERSION)"
 	git push origin v$(VERSION)
