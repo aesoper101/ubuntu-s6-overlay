@@ -31,7 +31,7 @@ RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y \
     tree \
     vim && \
     update-ca-certificates && \
-    apt-get remove -y --purge --auto-remove curl ca-certificates && \
+#    apt-get remove -y --purge --auto-remove curl ca-certificates && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
