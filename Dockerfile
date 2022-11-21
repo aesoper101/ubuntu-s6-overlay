@@ -25,6 +25,8 @@ RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y \
     curl \
     wget \
     xz-utils \
+    dialog \
+    apt-utils \
     vim && \
     update-ca-certificates && \
     apt-get remove -y --purge --auto-remove curl ca-certificates && \
