@@ -14,16 +14,11 @@ RUN apt-get update && apt-get install apt-transport-https ca-certificates -y && 
     echo deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse >> /etc/apt/sources.list && \
     echo deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse >> /etc/apt/sources.list && \
     echo deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse >> /etc/apt/sources.list && \
-    echo deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse >> /etc/apt/sources.list && \
-    apt-get update && \
-    apt-get upgrade -y
+    echo deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse >> /etc/apt/sources.list
+
 
 # install openldap \
-RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    gnutls-bin \
-    ssl-cert \
-    curl \
-    wget \
+RUN apt-get update -y && apt-get upgrade -y && LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y \
     xz-utils \
     dialog \
     apt-utils \
@@ -31,7 +26,6 @@ RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y \
     tree \
     vim && \
     update-ca-certificates && \
-    apt-get remove -y --purge --auto-remove curl ca-certificates && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
