@@ -1,5 +1,5 @@
 NAME = aesoper/ubuntu-s6-overlay
-VERSION = v1.0.5
+VERSION = 1.0.6
 
 .PHONY: build build-nocache test tag-latest push push-latest release git-tag-version
 
@@ -27,5 +27,5 @@ push-latest:
 release: build test tag-latest push push-latest
 
 git-tag-version:
-	git tag -a v$(VERSION) -m "v$(VERSION)"
-	git push origin v$(VERSION)
+	git tag -a $(VERSION) -m "v$(VERSION)"
+	git push origin $(VERSION)
