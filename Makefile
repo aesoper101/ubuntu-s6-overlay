@@ -1,5 +1,5 @@
 NAME = aesoper/ubuntu-s6-overlay
-VERSION = v1.0.8
+VERSION = v1.0.9
 
 .PHONY: build build-nocache test tag-latest push push-latest release git-tag-version
 
